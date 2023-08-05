@@ -4,22 +4,21 @@
 
 /**
  * main - Prints a random number and states whether
- *        it is even or odd.
- *
- * Return: Always 0.
+ *        it is positive, negative, or zero.
 */
 int main(void)
 {
-    int n;
+	int n;
 
-    srand(time(0));
-    n = rand() % 100; // generate a random number between 0 and 99
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
 
-    if (n % 2 == 0)
-        printf("%d is even.\n", n);
-    else if
-        printf("%d is odd.\n", n);
-    else
+	if (n > 0)
+		printf("%d is positive\n", n);
+	else if (n < 0)
+		printf("%d is negative\n", n);
+	else
 		printf("%d is zero\n", n);
-    return 0;
+
+	return (0);
 }
